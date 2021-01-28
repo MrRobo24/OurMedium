@@ -1,4 +1,4 @@
-package io.arpit.api.models
+package io.arpit.api.models.responses
 
 
 import com.squareup.moshi.Json

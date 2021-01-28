@@ -1,8 +1,9 @@
-package io.arpit.api.models
+package io.arpit.api.models.responses
 
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import io.arpit.api.models.entities.Comment
 
 @JsonClass(generateAdapter = true)
 data class CommentsResponse(
