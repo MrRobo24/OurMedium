@@ -1,6 +1,8 @@
 package io.arpit.api
 
 import io.arpit.api.models.entities.UserReg
+import io.arpit.api.models.entities.UserSignIn
+import io.arpit.api.models.requests.SignInRequest
 import io.arpit.api.models.requests.SignUpRequest
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
@@ -54,6 +56,38 @@ class ConduitClientTests {
             assertEquals(userReg.username, user.body()?.user?.username)
         }
 
+    }
+
+
+    @Test
+    fun `POST users - sign in`() {
+        runBlocking {
+            val userSignIn = UserSignIn(
+                email = "testemail1547@gmail.com",
+                password = "LetMeIn_447852"
+            )
+            val user = conduitClient.api.signInUser(SignInRequest(userSignIn))
+
+            assertEquals(userSignIn.email, user.body()?.user?.username)
+        }
+    }
+
+    @Test
+    fun `GET article by slug`() {
+        runBlocking {
+            val slug = "how-to-train-your-dragon"
+            val article = conduitClient.api.getArticleBySlug(slug)
+
+            assertEquals(slug, article.body()?.article?.slug)
+        }
+    }
+
+    @Test
+    fun `Get tags`() {
+        runBlocking {
+            val listTags = conduitClient.api.getTags()
+            assertNotNull(listTags)
+        }
     }
 
 }

@@ -13,7 +13,7 @@ data class Article(
     @Json(name = "createdAt")
     val createdAt: String,
     @Json(name = "description")
-    val description: String,
+    val description: String?,
     @Json(name = "favorited")
     val favorited: Boolean,
     @Json(name = "favoritesCount")
