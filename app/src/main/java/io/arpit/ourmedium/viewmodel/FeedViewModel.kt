@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 
 class FeedViewModel : ViewModel() {
     private val TAG = "FeedVM"
-    private val _feed = MutableLiveData<List<Article>>()
+    val _feed = MutableLiveData<List<Article>>()
 //    val feed: LiveData<List<Article>> = _feed
 
     fun fetchGlobalFeed() {
