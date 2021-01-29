@@ -1,13 +1,12 @@
 package io.arpit.api.services
 
-import io.arpit.api.models.requests.SignInRequest
-import io.arpit.api.models.requests.SignUpRequest
 import io.arpit.api.models.requests.UserUpdateRequest
+import io.arpit.api.models.responses.ArticleResponse
+import io.arpit.api.models.responses.ArticlesResponse
 import io.arpit.api.models.responses.ProfileResponse
 import io.arpit.api.models.responses.UserResponse
 import retrofit2.Response
 import retrofit2.http.*
-import sun.security.provider.certpath.OCSPResponse
 
 interface ConduitAuthAPI {
 
@@ -28,5 +27,23 @@ interface ConduitAuthAPI {
     suspend fun followProfile(
         @Path("username") username: String
     ): Response<ProfileResponse>
+
+    @DELETE("profiles/{username}/follow")
+    suspend fun unfollowProfile(
+        @Path("username") username: String
+    ): Response<ProfileResponse>
+
+    @GET("articles/feed")
+    suspend fun getFeedArticles(): Response<ArticlesResponse>
+
+    @POST("articles/{slug}/favorite")
+    suspend fun favoriteArticle(
+        @Path("slug") slug: String
+    ): Response<ArticleResponse>
+
+    @DELETE("articles/{slug}/favorite")
+    suspend fun unfavoriteArticle(
+        @Path("slug") slug: String
+    ): Response<ArticleResponse>
 
 }
