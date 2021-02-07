@@ -5,18 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.arpit.ourmedium.adapter.GlobalFeedAdapter
-import io.arpit.ourmedium.databinding.FragmentFeedBinding
+import io.arpit.ourmedium.databinding.FragmentGlobalFeedBinding
 import io.arpit.ourmedium.viewmodel.FeedViewModel
 
 class GlobalFeedFragment : Fragment() {
 
-    private lateinit var _binding: FragmentFeedBinding
+    private lateinit var _binding: FragmentGlobalFeedBinding
     private lateinit var globalFeedAdapter: GlobalFeedAdapter
-    private lateinit var viewModel: FeedViewModel
+    private val viewModel: FeedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,8 +25,9 @@ class GlobalFeedFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        viewModel = ViewModelProvider(this).get(FeedViewModel::class.java)
-        _binding = FragmentFeedBinding.inflate(inflater, container, false)
+        //viewModel = ViewModelProvider(this).get(FeedViewModel::class.java)
+        _binding = FragmentGlobalFeedBinding.inflate(inflater, container, false)
+        _binding.viewModel = viewModel
 
         globalFeedAdapter = GlobalFeedAdapter()
         _binding.rvFeed.layoutManager = LinearLayoutManager(context)

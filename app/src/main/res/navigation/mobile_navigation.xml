@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_feed"
-        android:name="io.arpit.ourmedium.ui.feed.GlobalFeedFragment"
+        android:name="io.arpit.ourmedium.ui.feed.FeedFragment"
         android:label="@string/menu_feed"
         tools:layout="@layout/fragment_feed" />
 
