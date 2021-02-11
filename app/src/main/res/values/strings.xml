@@ -11,4 +11,10 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_feed">Feed</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="have_an_account">Have an account?</string>
+    <string name="username_mr_robo24">Username: mr_robo24</string>
+    <string name="email_mr_robo24_mail_com">Email: mr_robo24@mail.com</string>
+    <string name="password">Password: *******</string>
+    <string name="register">Register</string>
 </resources>
