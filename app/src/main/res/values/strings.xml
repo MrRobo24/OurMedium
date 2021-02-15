@@ -17,4 +17,6 @@
     <string name="email_mr_robo24_mail_com">Email: mr_robo24@mail.com</string>
     <string name="password">Password: *******</string>
     <string name="register">Register</string>
+    <string name="sign_in">Sign In</string>
+    <string name="need_an_account">Need an account?</string>
 </resources>
